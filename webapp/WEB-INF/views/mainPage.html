@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mazer Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="main.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title" style="font-weight: bolder;">Project Menu</li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Repositories</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Issues</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-puzzle"></i>
+                                <span>Milestones</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Callender</span>
+                            </a>
+                        </li>
+
+                        <br><br>
+
+                        <li class="sidebar-title" style="font-weight: bolder;">Community</li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span>Recruit</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-person-badge-fill"></i>
+                                <span>PR</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Project Output</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Friends</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Chat</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- [[[[[[[[[[ 메인시작 ]]]]]]]]]] -->
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="card" style="height: 90px;">
+                <div class="card-body" style="line-height: 50px;">
+                    
+                    <!-- [[[[[[[[[[ 로그인버튼 ]]]]]]]]]] -->
+                    <!-- <h4 style="display: inline;">Main Home</h4>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inlineForm" style="float: right;">
+                        Github Login
+                    </button> -->
+                    <!-- [[[[[[[[[[ 로그인 모달 창 ]]]]]]]]]] -->
+                    <!-- <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel33" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                            role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div style="text-align: center; margin: auto;">
+                                        <img src="assets/images/logo/gitLogo.png" alt="" style="width: 100px; display: block; margin: auto;">
+                                        <span>Sign into Github to continue to OKKH!</span>
+                                    </div>
+                                    <button type="button" class="close" data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                        <i data-feather="x"></i>
+                                    </button>
+                                </div>
+                                <form action="#">
+                                    <div class="modal-body">
+                                        <label for="email">Github Email: </label>
+                                        <div class="form-group">
+                                            <input id="email" type="text" placeholder="Email Address"
+                                                class="form-control">
+                                        </div>
+                                        <label for="password">Password: </label>
+                                        <div class="form-group">
+                                            <input id="password" type="password" placeholder="Password"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light-secondary"
+                                            data-bs-dismiss="modal">
+                                            <i class="bx bx-x d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">Close</span>
+                                        </button>
+                                        <button type="button" class="btn btn-primary ms-1"
+                                            data-bs-dismiss="modal">
+                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">login</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <!-- [[[[[[[[[[ 로그인 후 ]]]]]]]]]] -->
+                    <h4 style="display: inline;">Main Home</h4>
+                    <div class="dropdown" style="float: right;">
+                        <a href="#" id="topbarUserDropdown" class="user-dropdown d-flex align-items-center dropend dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="avatar avatar-lg">
+                                <img src="./assets/compiled/jpg/8.jpg">
+                                <span class="avatar-status bg-success"></span>
+                            </div>
+                            <div class="name ms-4">
+                                <h5 class="mb-1">Yoon Jung MOOK</h5>
+                                <h6 class="text-muted mb-0">@johnducky</h6>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
+                            <li><a class="dropdown-item" href="#">My Page</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                    <!-- 알림 -->
+                    <div style="display: inline; float: right; margin-right: 15px;">
+                        <img src="assets/images/banner/bell.jpg" style="width: 50px;">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-content">
+                <section class="row">
+                    <div class="col-12 col-lg-9">
+
+                        <!-- [[[[[[[[[[ 배너사진 ]]]]]]]]]] -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body" style="height: 350px;">
+                                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                                    class="active"></li>
+                                                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                                                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+                                            </ol>
+                                            <div class="carousel-inner" style="height: 300px;">
+                                                <div class="carousel-item active" style="height: 300px;">
+                                                    <img src="assets/images/banner/4 감청색 배경화면.jpg" class="d-block w-100" alt="...">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <img src="assets/images/banner/Clab.png" style="width: 30%;">
+                                                        <h2 style="color: white;">OKKH 이용안내</h2>
+                                                        <p>오케케이에치와 함께 팀원 만들고 프젝 관리하자👋</p>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item" style="height: 300px;">
+                                                    <img src="assets/images/banner/6 어두운 하늘색 배경화면.jpg" class="d-block w-100" alt="...">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <img src="assets/images/banner/Truck.png" style="width: 35%;">
+                                                        <h2 style="color: white;">OKKH 새단장!!</h2>
+                                                        <p>더 편해진 오케케이에치! 모르는 사람 없게 해주세요🙏</p>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item" style="height: 300px;">
+                                                    <img src="assets/images/banner/3 분홍보라색 배경화면.jpg" class="d-block w-100" alt="...">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <img src="assets/images/banner/Heart.png" style="width: 35%;">
+                                                        <h2 style="color: white;">채용 정보들 뿌린다. 딱 대.</h2>
+                                                        <p>돈 맛 보 러 가 야 제 ? 그 제 ?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                                data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
+                                                data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- [[[[[[[[[[ 모집글 ]]]]]]]]]] -->
+                            <div class="col-12 col-xl-12">
+                                <div class="card" style="box-sizing: border-box;">
+                                    <div class="card-header">
+                                        <h4>TOP Recruit</h4>
+                                    </div>
+                                    <div class="card-body" style="display: inline;">
+                                        <div class="col-6 col-lg-3 col-md-6">
+                                            <div class="card" style="border: 1px solid gray;">
+                                                <div class="card-body px-4 py-4-5">
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                            <h6 class="text-muted font-semibold">Profile Views</h6>
+                                                            <h6 class="font-extrabold mb-0">112.000</h6>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- [[[[[[[[[[ 자기 pr ]]]]]]]]]] -->
+                            <div class="col-12 col-xl-12">
+                                <div class="card" style="box-sizing: border-box;">
+                                    <div class="card-header">
+                                        <h4>TOP PR</h4>
+                                    </div>
+                                    <div class="card-body" style="display: inline;">
+                                        <div class="col-6 col-lg-3 col-md-6">
+                                            <div class="card" style="border: 1px solid gray;">
+                                                <div class="card-body px-4 py-4-5">
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                            <h6 class="text-muted font-semibold">Profile Views</h6>
+                                                            <h6 class="font-extrabold mb-0">112.000</h6>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-3">
+                        
+                        <!-- [[[[[[[[[[ 친구목록 ]]]]]]]]]] -->
+                        <div class="row">
+                            <div class="col-md-15">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" id="Friends-tab" data-bs-toggle="tab" href="#Friends" role="tab"
+                                                    aria-controls="Friends" aria-selected="true" style="width: 125px; text-align: center;">Friends</a>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" id="TeamMates-tab" data-bs-toggle="tab" href="#TeamMates" role="tab"
+                                                    aria-controls="TeamMates" aria-selected="true" style="width: 125px; text-align: center;">TeamMates</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="Friends" role="tabpanel" aria-labelledby="Friends-tab">
+                                                <br>
+                                                <div class="recent-message d-flex px-4 py-3">
+                                                    <div class="avatar avatar-lg">
+                                                        <img src="./assets/compiled/jpg/4.jpg">
+                                                        <span class="avatar-status bg-success"></span>
+                                                    </div>
+                                                    <div class="name ms-4">
+                                                        <h5 class="mb-1">Hank Schrader</h5>
+                                                        <h6 class="text-muted mb-0">@johnducky</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="recent-message d-flex px-4 py-3">
+                                                    <div class="avatar avatar-lg">
+                                                        <img src="./assets/compiled/jpg/5.jpg">
+                                                        <span class="avatar-status bg-danger"></span>
+                                                    </div>
+                                                    <div class="name ms-4">
+                                                        <h5 class="mb-1">Dean Winchester</h5>
+                                                        <h6 class="text-muted mb-0">@imdean</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="recent-message d-flex px-4 py-3">
+                                                    <div class="avatar avatar-lg">
+                                                        <img src="./assets/compiled/jpg/1.jpg">
+                                                        <span class="avatar-status bg-success"></span>
+                                                    </div>
+                                                    <div class="name ms-4">
+                                                        <h5 class="mb-1">John Dodol</h5>
+                                                        <h6 class="text-muted mb-0">@dodoljohn</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="TeamMates" role="tabpanel" aria-labelledby="TeamMates-tab">
+                                                <br>
+                                                <div class="recent-message d-flex px-4 py-3">
+                                                    <div class="avatar avatar-lg">
+                                                        <img src="./assets/compiled/jpg/4.jpg">
+                                                        <span class="avatar-status bg-success"></span>
+                                                    </div>
+                                                    <div class="name ms-4">
+                                                        <h5 class="mb-1">Hank Schrader</h5>
+                                                        <h6 class="text-muted mb-0">@johnducky</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="recent-message d-flex px-4 py-3">
+                                                    <div class="avatar avatar-lg">
+                                                        <img src="./assets/compiled/jpg/5.jpg">
+                                                        <span class="avatar-status bg-danger"></span>
+                                                    </div>
+                                                    <div class="name ms-4">
+                                                        <h5 class="mb-1">Dean Winchester</h5>
+                                                        <h6 class="text-muted mb-0">@imdean</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="recent-message d-flex px-4 py-3">
+                                                    <div class="avatar avatar-lg">
+                                                        <img src="./assets/compiled/jpg/1.jpg">
+                                                        <span class="avatar-status bg-success"></span>
+                                                    </div>
+                                                    <div class="name ms-4">
+                                                        <h5 class="mb-1">John Dodol</h5>
+                                                        <h6 class="text-muted mb-0">@dodoljohn</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2023 &copy; OKKH</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by 오류없조</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
