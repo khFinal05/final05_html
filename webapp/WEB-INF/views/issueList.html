@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../resources/css/bootstrap.css">
 
-    <link rel="stylesheet" href="../../resources/vendors/iconly/bold.css">e
+    <link rel="stylesheet" href="../../resources/vendors/iconly/bold.css">
 
     <link rel="stylesheet" href="../../resources/vendors/choices.js/choices.min.css" />
 
@@ -19,6 +19,16 @@
     <link rel="stylesheet" href="../../resources/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="../../resources/css/app.css">
     <link rel="shortcut icon" href="../../resources/images/favicon.svg" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+    
 </head>
 
 <body>
@@ -121,19 +131,20 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">마일스톤</h4>
-                                <div class="form-group" style="padding-top: 20px;">
-                                    <button class="btn btn-primary">Opened</button>
-                                    <button class="btn btn-primary">Closed</button>
-                                    <button class="btn btn-primary">전체보기</button>
+                                <h4 class="card-title">Issue</h4>
+                                <div class="form-group">
+                                <button type="submit"
+                                        class="btn btn-primary me-1 mb-1"
+                                        style="width: 100px; float: right;"
+                                        onclick="location.href='이슈등록.html'">이슈등록</button>
                                 </div>
+                                <button class="btn btn-primary" id="allBtn">전체</button>
+                                <button class="btn btn-primary" id="continueBtn">진행중</button>
+                                <button class="btn btn-primary" id="finishBtn">진행완료</button>
                             </div>
                             
                             
                             <div class="card-content">
-                                <div class="card-body">
-                                    
-                                </div>
                                 <!-- table head dark -->
                                 <div class="table-responsive">
                                     <table class="table mb-0">
@@ -142,39 +153,78 @@
                                                 <th>번호</th>
                                                 <th>제목</th>
                                                 <th>생성일</th>
-                                                <th>종료일</th>
-                                                <th>최근수정일</th>
-                                                <th>진척도</th>
-                                                <th>진행중인 이슈</th>
-                                                <th>종료된 이슈</th>
                                                 <th>작성자</th>
+                                                    <th>
+                                                        <div class="row" style="margin-top: 8px;">
+                                                            <div class="col-1" style="line-height: 50px;">라벨</div>
+                                                            <div class="form-group col-11" style="width:500px;">
+                                                                
+                                                                <select class="choices form-select multiple-remove"
+                                                                    multiple="multiple">
+                                                                    <optgroup label="Figures">
+                                                                        <option value="bug">bug</option>
+                                                                        <option value="documentation">documentation</option>
+                                                                        <option value="duplicate">duplicate</option>
+                                                                        <option value="enhancement">enhancement</option>
+                                                                        <option value="goodFirstIssue">good first issue</option>
+                                                                        <option value="helpWanted">help wanted</option>
+                                                                        <option value="invalid">invalid</option>
+                                                                        <option value="question">question</option>
+                                                                        <option value="purwontfixple">wontfix</option>
+                                                                    </optgroup>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </th>
+                                                <th>담당자</th>
+                                                <th>진행상태</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="text-bold-500">1</td>
-                                                <td class="text-bold-500"><a href="#" style="color: black; font-weight: bold;">마일스톤페이지입니다1</a></td>
+                                                <td class="text-bold-500"><a href="이슈상세페이지.html" style="color: black; font-weight: bold;">이슈페이지입니다1</a></td>
                                                 <td>2023-11-07</td>
-                                                <td class="text-bold-500">No due date</td>
-                                                <td>2023-11-07</td>
-                                                    <td class="align-middle text-dark">
-                                                        <div class="float-start me-3">15%</div>
-                                                            <div class="mt-2"><div style="height:5px" class="progress">
-                                                                <div role="progressbar" class="progress-bar" style="width:15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                        
-                                                <td>3</td>
-                                                <td>2</td>
-                                                <td>나</td>
+                                                <td class="text-bold-500">UI/UX</td>
+                                                <td>
+                                                    <span class="badge bg-danger">bug</span>
+                                                    <span class="badge bg-primary">documentation</span>
+                                                    <span class="badge bg-secondary">duplicate</span>
+                                                    <span class="badge bg-info">enhancement</span>
+                                                    <span class="badge" style="background-color: rgb(112, 87, 255);">good first issue</span>
+                                                    <span class="badge bg-success">help wanted</span>
+                                                    <span class="badge bg-warning">invalid</span>
+                                                    <span class="badge" style="background-color: rgb(216, 118, 227);">question</span>
+                                                    <span class="badge bg-light" style="color: black;">wontfix</span>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <div class="avatar-group">
+                                                        <span class="avatar avatar-sm">
+                                                            <img alt="avatar" src="https://img.sbs.co.kr/newsnet/etv/upload/2023/08/17/30000869319_1280.jpg" class="rounded-circle">
+                                                        </span>
+                                                        <span class="avatar avatar-sm">
+                                                            <img alt="avatar" src="https://img.sbs.co.kr/newsnet/etv/upload/2023/08/17/30000869319_1280.jpg" class="rounded-circle">
+                                                        </span>
+                                                        <span class="avatar avatar-sm">
+                                                            <img alt="avatar" src="https://img.sbs.co.kr/newsnet/etv/upload/2023/08/17/30000869319_1280.jpg" class="rounded-circle">
+                                                        </span>
+                                                        <span class="avatar avatar-sm avatar-primary">
+                                                            <span class="avatar-initials rounded-circle fs-6">+5</span>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td id="continue">진행중</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">2</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다2</td>
+                                                <td class="text-bold-500">이슈페이지입니다2</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Graphic concepts</td>
                                                 <td>Remote</td>
+                                                <td></td>
                                                 <td>진행중</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -182,10 +232,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">3</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다3</td>
+                                                <td class="text-bold-500">이슈페이지입니다3</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Animation</td>
                                                 <td>Remote</td>
+                                                <td></td>
                                                 <td>진행중</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -193,10 +244,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">4</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다4</td>
+                                                <td class="text-bold-500">이슈페이지입니다4</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Animation</td>
                                                 <td>Remote</td>
+                                                <td></td>
                                                 <td>진행중</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -204,10 +256,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">5</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td class="text-bold-500">이슈페이지입니다5</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Animation</td>
                                                 <td>Remote</td>
+                                                <td></td>
                                                 <td>진행완료</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -215,10 +268,23 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">5</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td class="text-bold-500">이슈페이지입니다5</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Animation</td>
                                                 <td>Remote</td>
+                                                <td></td>
+                                                <td id="continue">진행완료</td>
+                                                <td><a href="#"><i
+                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
+                                                            data-feather="mail"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">5</td>
+                                                <td class="text-bold-500">이슈페이지입니다5</td>
+                                                <td>2023-11-07</td>
+                                                <td class="text-bold-500">Animation</td>
+                                                <td>Remote</td>
+                                                <td></td>
                                                 <td>진행완료</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -226,10 +292,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">5</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td class="text-bold-500">이슈페이지입니다5</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Animation</td>
                                                 <td>Remote</td>
+                                                <td></td>
                                                 <td>진행완료</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -237,10 +304,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">5</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td class="text-bold-500">이슈페이지입니다5</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Animation</td>
                                                 <td>Remote</td>
+                                                <td></td>
                                                 <td>진행완료</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -248,21 +316,11 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-bold-500">5</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
+                                                <td class="text-bold-500">이슈페이지입니다5</td>
                                                 <td>2023-11-07</td>
                                                 <td class="text-bold-500">Animation</td>
                                                 <td>Remote</td>
-                                                <td>진행완료</td>
-                                                <td><a href="#"><i
-                                                            class="badge-circle badge-circle-light-secondary font-medium-1"
-                                                            data-feather="mail"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-bold-500">5</td>
-                                                <td class="text-bold-500">마일스톤페이지입니다5</td>
-                                                <td>2023-11-07</td>
-                                                <td class="text-bold-500">Animation</td>
-                                                <td>Remote</td>
+                                                <td></td>
                                                 <td>진행완료</td>
                                                 <td><a href="#"><i
                                                             class="badge-circle badge-circle-light-secondary font-medium-1"
@@ -291,6 +349,32 @@
             </footer>
         </div>
     </div>
+
+    <script>
+        $(function() {
+
+            // 진행중 조회
+            $("#continueBtn").click(function() {
+                if($("#continue").text() === "진행중") {
+                    $("tbody tr").hide();
+                    $("tbody tr:has(td#continue:contains('진행중'))").show();
+                }
+            })
+
+            // 전체조회
+            $("#allBtn").click(function() {
+                $("tbody tr").show();
+            });
+
+            // 진행완료 조회
+            $("#finishBtn").click(function() {
+                $("tbody tr").hide();
+                $("tbody tr:has(td#continue:contains('진행완료'))").show();
+            });
+        });
+    </script>
+
+
 
     <script src="../../resources/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="../../resources/js/bootstrap.bundle.min.js"></script>

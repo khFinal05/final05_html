@@ -14,13 +14,21 @@
 
     <link rel="stylesheet" href="../../resources/vendors/choices.js/choices.min.css" />
 
-    <link rel="stylesheet" href="../../resources/vendors/quill/quill.bubble.css">
-    <link rel="stylesheet" href="../../resources/vendors/quill/quill.snow.css">
 
     <link rel="stylesheet" href="../../resources/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="../../resources/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="../../resources/css/app.css">
     <link rel="shortcut icon" href="../../resources/images/favicon.svg" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+    
 </head>
 
 <body>
@@ -117,57 +125,56 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-
+            
             <section class="section">
-                <div class="row">
-                    <div class="card col-md-8">
-                        <div class="card-header">
-                            <h4 class="card-title">이슈 등록하기</h4>
+                <div class="row" id="table-head">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">마일스톤제목</h4>
+                                <span>마감일</span> &nbsp;&nbsp;&nbsp;
+                                <span>15% complete</span>
+                                <div class="form-group">
+                                    <button type="submit"
+                                    class="btn btn-primary me-1 mb-1"
+                                    style="width: 100px; float: right;"
+                                    onclick="location.href='이슈등록.html'">이슈등록</button>
+                                    <button type="submit"
+                                            class="btn btn-primary me-1 mb-1"
+                                            style="width: 150px; float: right;"
+                                            onclick="location.href='마일스톤수정페이지.html'">마일스톤 편집</button>
+                                </div>
+                                <button class="btn btn-primary" id="allBtn">전체</button>
+                                <button class="btn btn-primary" id="continueBtn">진행중</button>
+                                <button class="btn btn-primary" id="finishBtn">진행완료</button>
+                            </div>
+                            
+                            
+                            <div class="card-content">
+                                <!-- table head dark -->
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>제목</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-bold-500">1</td>
+                                                <td class="text-bold-500"><a href="이슈상세페이지.html" style="color: black; font-weight: bold;">이슈페이지입니다1</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-bold-500">2</td>
+                                                <td class="text-bold-500">이슈페이지입니다2</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p>Block some text to display options in poppovers </p>
-                            <div id="full" style="height: 600px;">
-                                gg
-                            </div> <br>
-                            <button class="btn btn-primary" style="float: right;">제출하기</button>
-                        </div>
-                    </div>
-                    <div class="card col-md-3">
-                        <div class="card-header">
-                            <h4 class="card-title">이슈 등록하기</h4>
-                        </div>
-                        <h6>이슈 담당자</h6> <br>
-                        <fieldset class="form-group">
-                            <select class="form-select" id="basicSelect">
-                                <option>IT</option>
-                                <option>Blade Runner</option>
-                                <option>Thor Ragnarok</option>
-                            </select>
-                        </fieldset>
-                        <br>
-                        <h6>라벨</h6> <br>
-                        <fieldset class="form-group">
-                            <select class="form-select" id="basicSelect">
-                                <option>bug</option>
-                                <option>documentation</option>
-                                <option>duplicate</option>
-                                <option>enhancement</option>
-                                <option>good first issue</option>
-                                <option>help wanted</option>
-                                <option>invalid</option>
-                                <option>question</option>
-                                <option>wontfix</option>
-                            </select>
-                        </fieldset>
-                        <br>
-                        <h6>마일스톤</h6> <br>
-                        <fieldset class="form-group">
-                            <select class="form-select" id="basicSelect">
-                                <option>IT</option>
-                                <option>Blade Runner</option>
-                                <option>Thor Ragnarok</option>
-                            </select>
-                        </fieldset>
                     </div>
                 </div>
             </section>
@@ -185,6 +192,33 @@
                 </div>
             </footer>
         </div>
+    </div>
+
+    <script>
+        $(function() {
+
+            // 진행중 조회
+            $("#continueBtn").click(function() {
+                if($("#continue").text() === "진행중") {
+                    $("tbody tr").hide();
+                    $("tbody tr:has(td#continue:contains('진행중'))").show();
+                }
+            })
+
+            // 전체조회
+            $("#allBtn").click(function() {
+                $("tbody tr").show();
+            });
+
+            // 진행완료 조회
+            $("#finishBtn").click(function() {
+                $("tbody tr").hide();
+                $("tbody tr:has(td#continue:contains('진행완료'))").show();
+            });
+        });
+    </script>
+
+
 
     <script src="../../resources/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="../../resources/js/bootstrap.bundle.min.js"></script>
@@ -196,8 +230,4 @@
     <script src="../../resources/vendors/choices.js/choices.min.js"></script>
 
     <script src="../../resources/js/main.js"></script>
-
-    <script src="../../resources/vendors/quill/quill.min.js"></script>
-    <script src="../../resources/js/pages/form-editor.js"></script>
-
 </body>
